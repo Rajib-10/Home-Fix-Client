@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import regImg from "../../../src/assets/register.json"
 import Lottie from "lottie-react";
+import useAuth from "../../Hook/useAuth";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
 const Register = () => {
 
+  const {createUser,updateUserProfile,userLogOut} = useAuth()
+    const navigate = useNavigate()
 
         const handleSubmit =e=>{
             e.preventDefault()
@@ -14,8 +18,35 @@ const Register = () => {
             const name = form.name.value
             const email = form.email.value
             const password = form.password.value
-            const user = {email,password,photo,name}
-            console.log(user)
+            
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+              return toast.error("Invalid Email.")
+          }
+          if(password.length <6){
+              return toast.error("password is less than 6 characters")
+          }
+          if(!/[A-Z]/.test(password)){
+              return toast.error("password  don't have a capital letter")
+          }
+          if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+              return toast.error("password  don't have a special character")
+          }
+          
+          createUser(email,password)
+          .then(()=>{
+            toast.success("User Created Successfully.")
+              // updateUserProfile(name,photo)
+              // .then(()=>{
+              //     toast.success("User Created Successfully.")
+              //     userLogOut()
+              //     navigate('/login')
+              // })
+              
+          })
+         .catch(error=>{
+          toast.error(`${error.message}`) 
+          console.log(error.message)
+         })
         }
     return (
         <div>
@@ -115,6 +146,7 @@ const Register = () => {
             </div>
           </div>
         </section>
+        <Toaster />
       </div>
     );
 };

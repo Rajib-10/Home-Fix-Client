@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../src/assets/logo.png"
+import logo from "../../../src/assets/logo.png";
+import useAuth from "../../Hook/useAuth";
+
 const Navbar = () => {
+  const { user } = useAuth();
+
   return (
     <div>
       <div className="navbar bg-orange-50">
@@ -27,40 +31,49 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56"
             >
               <li>
-                <NavLink 
+                <NavLink
                   to="/"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-orange-400 underline font-semibold"
+                      : ""
                   }
                 >
                   Home
                 </NavLink>
               </li>
 
-
               <li>
                 <NavLink
                   to="/services"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-orange-400 underline font-semibold"
+                      : ""
                   }
                 >
                   Services
                 </NavLink>
               </li>
 
-
               <li>
                 <NavLink
                   to="/login"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-orange-400 underline font-semibold"
+                      : ""
                   }
                 >
                   Login
                 </NavLink>
               </li>
-
 
               <li>
                 <NavLink
@@ -73,9 +86,8 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-
               <li>
-              <NavLink
+                <NavLink
                   to="/messages"
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
@@ -85,42 +97,40 @@ const Navbar = () => {
                 </NavLink>
 
                 <ul className="p-2">
-
                   <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  My Services
-                </NavLink>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                      }
+                    >
+                      My Services
+                    </NavLink>
                   </li>
 
                   <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  Add Services
-                </NavLink>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                      }
+                    >
+                      Add Services
+                    </NavLink>
                   </li>
 
                   <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  my Schedules
-                </NavLink>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                      }
+                    >
+                      my Schedules
+                    </NavLink>
                   </li>
                 </ul>
               </li>
-              
             </ul>
           </div>
 
@@ -130,106 +140,118 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">
-          <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-orange-400 underline font-semibold"
+                    : ""
+                }
+              >
+                Home
+              </NavLink>
+            </li>
 
-              <li>
-                <NavLink
-                  to="/services"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
+            <li>
+              <NavLink
+                to="/services"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-orange-400 underline font-semibold"
+                    : ""
+                }
+              >
+                Services
+              </NavLink>
+            </li>
 
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-orange-400 underline font-semibold"
+                    : ""
+                }
+              >
+                Login
+              </NavLink>
+            </li>
 
-              <li>
-                <NavLink
-                  to="/login"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
-                  }
-                >
-                  Login
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  Logout
-                </NavLink>
-              </li>
-
+            <li>
+              <NavLink
+                to="/messages"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+              >
+                Logout
+              </NavLink>
+            </li>
 
             <li tabIndex={0}>
               <details>
                 <summary>Dashboard</summary>
                 <ul className="p-2">
-
-
                   <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  My Services
-                </NavLink>
-                  </li>
-
-
-                  <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  Add Services
-                </NavLink>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                      }
+                    >
+                      My Services
+                    </NavLink>
                   </li>
 
                   <li>
-                  <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "w-[130px]"
-                  }
-                >
-                  My Schedules
-                </NavLink>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                      }
+                    >
+                      Add Services
+                    </NavLink>
                   </li>
 
+                  <li>
+                    <NavLink
+                      to="/messages"
+                      className={({ isActive, isPending }) =>
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "active"
+                          : "w-[130px]"
+                      }
+                    >
+                      My Schedules
+                    </NavLink>
+                  </li>
                 </ul>
               </details>
             </li>
           </ul>
         </div>
         <div className="navbar-end ">
-        
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="https://i.ibb.co/cvLHF9r/10.jpg" />
-        </div>
-      </label>
-     <h1 className="font-bold italic">Name</h1>
-    
+          {user?.email && (
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user.photoURL} />
+              </div>
+            </label>
+          )}
+          {user?.email && (
+            <h1 className="font-bold italic">{user.displayName}</h1>
+          )}
         </div>
       </div>
     </div>
