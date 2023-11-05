@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import regImg from "../../../src/assets/register.json"
 import Lottie from "lottie-react";
 
+
+
 const Register = () => {
 
 

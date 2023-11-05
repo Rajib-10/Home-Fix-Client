@@ -1,9 +1,14 @@
+import SliderSlick from "./Slider/SliderSlick";
+
 
 
 const Home = () => {
+
+    
+
     return (
         <div>
-            this is home page.
+            <SliderSlick />
         </div>
     );
 };
