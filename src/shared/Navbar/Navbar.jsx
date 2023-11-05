@@ -27,10 +27,10 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56"
             >
               <li>
-                <NavLink
-                  to="/messages"
+                <NavLink 
+                  to="/"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Home
@@ -40,9 +40,9 @@ const Navbar = () => {
 
               <li>
                 <NavLink
-                  to="/messages"
+                  to="/services"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Services
@@ -52,9 +52,9 @@ const Navbar = () => {
 
               <li>
                 <NavLink
-                  to="/messages"
+                  to="/login"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Login
@@ -93,7 +93,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  My Service
+                  My Services
                 </NavLink>
                   </li>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  Add Service
+                  Add Services
                 </NavLink>
                   </li>
 
@@ -115,7 +115,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  my Schedule
+                  my Schedules
                 </NavLink>
                   </li>
                 </ul>
@@ -130,9 +130,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 ">
           <li>
                 <NavLink
-                  to="/messages"
+                  to="/"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Home
@@ -141,9 +141,9 @@ const Navbar = () => {
 
               <li>
                 <NavLink
-                  to="/messages"
+                  to="/services"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Services
@@ -153,9 +153,9 @@ const Navbar = () => {
 
               <li>
                 <NavLink
-                  to="/messages"
+                  to="/login"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-orange-400 underline font-semibold" : ""
                   }
                 >
                   Login
@@ -187,7 +187,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  My Service
+                  My Services
                 </NavLink>
                   </li>
 
@@ -199,7 +199,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  My Service
+                  Add Services
                 </NavLink>
                   </li>
 
@@ -207,10 +207,10 @@ const Navbar = () => {
                   <NavLink
                   to="/messages"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "w-[120px]"
+                    isPending ? "pending" : isActive ? "active" : "w-[130px]"
                   }
                 >
-                  My Schedule
+                  My Schedules
                 </NavLink>
                   </li>
 
@@ -219,8 +219,24 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end ">
+        <div className="dropdown dropdown-end">
+      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
+      </label>
+      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a className="justify-between">
+            Profile
+            <span className="badge">New</span>
+          </a>
+        </li>
+        <li><a>Settings</a></li>
+        <li><a>Logout</a></li>
+      </ul>
+    </div>
         </div>
       </div>
     </div>
