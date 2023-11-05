@@ -13,7 +13,7 @@ const Login = () => {
 	const location = useLocation()
 
 
-  const {googleLogin} = useAuth()
+  const {googleLogin,signInUser} = useAuth()
  
 
     const handleSubmit =e=>{
@@ -21,8 +21,19 @@ const Login = () => {
         const form = e.target
         const email = form.email.value
         const password = form.password.value
-        const user = {email,password}
-        console.log(user)
+        
+        signInUser(email,password)
+		.then(result=>{
+			toast.success("User logged in Successfully.")
+			navigate(location?.state ? location.state : "/")
+			console.log(result.user)
+		})
+		.catch(error=>{
+			toast.error(`${error.message}`)
+			console.log(error.message)
+		})
+        
+        
     }
 
     const handleGoogle =()=>{

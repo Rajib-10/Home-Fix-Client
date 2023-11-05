@@ -3,7 +3,7 @@ import logo from "../../../src/assets/logo.png";
 import useAuth from "../../Hook/useAuth";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user,userLogOut } = useAuth();
 
   return (
     <div>
@@ -90,7 +90,7 @@ const Navbar = () => {
                 <NavLink
                   to="/messages"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "active" : "z-10"
                   }
                 >
                   Dashboard
@@ -101,7 +101,7 @@ const Navbar = () => {
                     <NavLink
                       to="/messages"
                       className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
+                        isPending ? "pending" : isActive ? "active" : "z-10"
                       }
                     >
                       My Services
@@ -112,7 +112,7 @@ const Navbar = () => {
                     <NavLink
                       to="/messages"
                       className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
+                        isPending ? "pending" : isActive ? "active" : "z-10"
                       }
                     >
                       Add Services
@@ -123,7 +123,7 @@ const Navbar = () => {
                     <NavLink
                       to="/messages"
                       className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
+                        isPending ? "pending" : isActive ? "active" : "z-10"
                       }
                     >
                       my Schedules
@@ -170,33 +170,28 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-orange-400 underline font-semibold"
-                    : ""
-                }
-              >
-                Login
-              </NavLink>
+            
+              <li className={user && "hidden"}>
+                <NavLink
+                  to="/login"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-orange-400 underline font-semibold"
+                      : ""
+                  }
+                >
+                  Login
+                </NavLink>
+              </li>
+            
+
+            <li className={user ? "display" : "hidden"}>
+              <button onClick={()=>userLogOut()}>Logout</button>
             </li>
 
-            <li>
-              <NavLink
-                to="/messages"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Logout
-              </NavLink>
-            </li>
-
-            <li tabIndex={0}>
+            <li tabIndex={0} className={`${user ? 'visible' : 'hidden'}`}>
               <details>
                 <summary>Dashboard</summary>
                 <ul className="p-2">
@@ -204,7 +199,11 @@ const Navbar = () => {
                     <NavLink
                       to="/messages"
                       className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "active"
+                          : "z-10 bg-gray-100 hover:bg-gray-300"
                       }
                     >
                       My Services
@@ -215,7 +214,11 @@ const Navbar = () => {
                     <NavLink
                       to="/messages"
                       className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "active"
+                          : "z-10 bg-gray-100 hover:bg-gray-300"
                       }
                     >
                       Add Services
@@ -230,7 +233,7 @@ const Navbar = () => {
                           ? "pending"
                           : isActive
                           ? "active"
-                          : "w-[130px]"
+                          : "w-[130px] z-10 bg-gray-100 hover:bg-gray-300"
                       }
                     >
                       My Schedules

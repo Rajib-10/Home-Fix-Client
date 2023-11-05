@@ -38,8 +38,8 @@ const Register = () => {
               updateUserProfile(name,photo)
               .then(()=>{
                   toast.success("User Created Successfully.")
-                  // userLogOut()
-                  // navigate('/login')
+                  userLogOut()
+                  navigate('/login')
               })
               
           })
