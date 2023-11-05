@@ -34,13 +34,13 @@ const Register = () => {
           
           createUser(email,password)
           .then(()=>{
-            toast.success("User Created Successfully.")
-              // updateUserProfile(name,photo)
-              // .then(()=>{
-              //     toast.success("User Created Successfully.")
-              //     userLogOut()
-              //     navigate('/login')
-              // })
+            
+              updateUserProfile(name,photo)
+              .then(()=>{
+                  toast.success("User Created Successfully.")
+                  // userLogOut()
+                  // navigate('/login')
+              })
               
           })
          .catch(error=>{
