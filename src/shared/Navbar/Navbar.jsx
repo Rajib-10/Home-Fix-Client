@@ -3,7 +3,7 @@ import logo from "../../../src/assets/logo.png"
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-orange-100">
+      <div className="navbar bg-orange-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -222,23 +222,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end ">
-        <div className="dropdown dropdown-end">
+        
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          <img src="https://i.ibb.co/cvLHF9r/10.jpg" />
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
+     <h1 className="font-bold italic">Name</h1>
+    
         </div>
       </div>
     </div>

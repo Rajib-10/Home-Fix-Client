@@ -1,11 +1,20 @@
 import Lottie from "lottie-react";
 import { FcGoogle } from 'react-icons/fc';
 import loginImg from '../../../src/assets/login.json'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../Hook/useAuth";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
 const Login = () => {
+
+  const navigate = useNavigate()
+	const location = useLocation()
+
+
+  const {googleLogin} = useAuth()
+ 
 
     const handleSubmit =e=>{
         e.preventDefault()
@@ -17,7 +26,16 @@ const Login = () => {
     }
 
     const handleGoogle =()=>{
-        console.log("google button is clicked.")
+      googleLogin()
+      .then(result=>{
+        toast.success("User logged in Successfully.")
+        navigate(location?.state ? location.state : "/")
+        console.log(result.user)
+      })
+      .catch(error=>{
+        toast.error(`${error.message}`) 
+        console.log(error.message)
+      })
     }
 
   return (
@@ -107,6 +125,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <Toaster />
     </div>
   );
 };
