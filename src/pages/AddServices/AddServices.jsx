@@ -80,7 +80,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user.displayName}
+              defaultValue={user?.displayName}
                 type="text"
                 placeholder="Your Name"
                 required
@@ -95,7 +95,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user.email}
+              defaultValue={user?.email}
                 type="email"
                 placeholder="Your Email"
                 name="email"
@@ -115,7 +115,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user.photoURL}
+              defaultValue={user?.photoURL}
                 type="text"
                 placeholder="Image URL"
                 name="photo"
