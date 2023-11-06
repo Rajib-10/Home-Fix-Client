@@ -6,6 +6,8 @@ import Services from "../pages/Service/Services";
 import Login from "../pages/Login/Login"
 import Register from "../pages/Register/Register"
 import AddServices from "../pages/AddServices/AddServices";
+import UpdateService from "../pages/UpdateService/UpdateService";
+
 
 const route = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const route = createBrowserRouter([
         {
             path: "/add-services",
             element: <AddServices />
+        },
+        {
+            path: "/update-service",
+            element: <UpdateService />
         }
     ],
   },
