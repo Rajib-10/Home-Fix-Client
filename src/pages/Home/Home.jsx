@@ -3,6 +3,8 @@ import AskedQuestion from "./FAG/AskedQuestion";
 import RecentServices from "./RecentServices/RecentServices";
 import SliderSlick from "./Slider/SliderSlick";
 import Marquee from "react-fast-marquee";
+import Summaries from "./Summaries/Summaries";
+import HowWork from "./HowWork/HowWork";
 
 const Home = () => {
   const { user } = useAuth();
@@ -23,8 +25,10 @@ const Home = () => {
         </div>
       )}
       <SliderSlick />
+      <Summaries />
       <RecentServices />
       <AskedQuestion />
+     <HowWork />
     </div>
   );
 };
