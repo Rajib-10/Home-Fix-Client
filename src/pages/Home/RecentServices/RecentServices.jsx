@@ -10,7 +10,7 @@ const RecentServices = () => {
     },[])
     return (
         <div className="space-y-4">
-            <h1 className="text-orange-500 text-center text-3xl font-medium">Recent Services:{recentWorks.length}</h1>
+            <h1 className="text-orange-500 text-center text-3xl font-medium">Recent Services</h1>
             <p className="text-center">Discover our latest home improvement and repair services, designed to make your life easier and your home better</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:w-[90%] mx-auto">
                 {

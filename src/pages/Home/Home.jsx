@@ -1,4 +1,5 @@
 import useAuth from "../../Hook/useAuth";
+import AskedQuestion from "./FAG/AskedQuestion";
 import RecentServices from "./RecentServices/RecentServices";
 import SliderSlick from "./Slider/SliderSlick";
 import Marquee from "react-fast-marquee";
@@ -23,6 +24,7 @@ const Home = () => {
       )}
       <SliderSlick />
       <RecentServices />
+      <AskedQuestion />
     </div>
   );
 };
