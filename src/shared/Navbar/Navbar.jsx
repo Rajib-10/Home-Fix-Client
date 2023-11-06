@@ -110,7 +110,7 @@ const Navbar = () => {
 
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/add-services"
                       className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : "z-10"
                       }
@@ -212,7 +212,7 @@ const Navbar = () => {
 
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/add-services"
                       className={({ isActive, isPending }) =>
                         isPending
                           ? "pending"
