@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const HowWork = () => {
     return (
         <div className="py-8 bg-base-200 space-y-4 ">
-            <h1 className="text-3xl font-medium text-center">How We Work</h1>
+            <h1 className="text-3xl font-medium text-center text-orange-500">How We Work</h1>
 
             <div className="flex flex-col lg:flex-row  gap-20 items-center w-[70%] mx-auto">
 

@@ -75,16 +75,9 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-              <li>
-                <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
-                >
-                  Logout
-                </NavLink>
-              </li>
+              <li className={user ? "display" : "hidden"}>
+              <button onClick={()=>userLogOut()}>Logout</button>
+            </li>
 
               <li>
                 <NavLink
@@ -99,7 +92,7 @@ const Navbar = () => {
                 <ul className="p-2">
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/my-services"
                       className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : "z-10"
                       }
@@ -121,7 +114,7 @@ const Navbar = () => {
 
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/my-schedules"
                       className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : "z-10"
                       }
@@ -197,7 +190,7 @@ const Navbar = () => {
                 <ul className="p-2">
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/my-services"
                       className={({ isActive, isPending }) =>
                         isPending
                           ? "pending"
@@ -227,7 +220,7 @@ const Navbar = () => {
 
                   <li>
                     <NavLink
-                      to="/messages"
+                      to="/my-schedules"
                       className={({ isActive, isPending }) =>
                         isPending
                           ? "pending"

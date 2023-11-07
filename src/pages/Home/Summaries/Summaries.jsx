@@ -3,12 +3,13 @@ import {HiBuildingOffice2} from 'react-icons/hi2'
 import {FaAward} from 'react-icons/fa6'
 import {IoCheckmarkDoneSharp} from 'react-icons/io5'
 import CountUp from "react-countup";
+import { motion } from 'framer-motion';
 
 
 const Summaries = () => {
     return (
-        <div className='absolute left-[100px] bottom-[110px]'>
-            <div className='flex justify-between items-center md:w-[90%] mx-auto bg-base-300 rounded-lg  p-8'>
+        <div className='py-8 bg-base-200'>
+            <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} className='flex justify-between items-center md:w-[90%] mx-auto bg-base-300 rounded-lg  p-8'>
             <div className='flex items-center gap-7'>
                 <div>
                     <BsPeopleFill className='text-6xl' />
@@ -48,7 +49,7 @@ const Summaries = () => {
                     <h1 className='text-xl font-bold'>Win Awards</h1>
                 </div>
             </div>
-        </div>
+        </motion.div>
         </div>
     );
 };

@@ -1,38 +1,55 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import toast, { Toaster } from "react-hot-toast";
 import useAuth from "../../Hook/useAuth";
 
 const AddServices = () => {
+  const { user } = useAuth();
 
-    const {user} = useAuth()
+  const [text] = useTypewriter({
+      words: [" Service URL", " Service Name", " price", " Service Area", " Description"],
+      loop: {},
+      typeSpeed: 100,
+      deleteSpeed: 40,
+    });
 
-    const [text] = useTypewriter({
-        words: [" Service URL", " Service Name", " price", " Service Area", " Description"],
-        loop: {},
-        typeSpeed: 100,
-        deleteSpeed: 40,
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const form = e.target
+    const  serviceUrl = form.image.value
+    const serviceName = form.serviceName.value
+    const name = form.name.value
+    const email = form.email.value
+    const photo = form.photo.value
+    const price = form.price.value
+    const area = form.area.value
+    const description = form.description.value
+
+    const adding = {serviceUrl,serviceName,name,email,photo,price,area,description}
+    console.log("adding",adding)
+   
+
+         fetch("http://localhost:5000/add-services", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(adding),
+    })
+      .then((result) => result.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Service added successfully."); toast
+          form.reset();
+        }
+        console.log(data);
       });
+  };
 
-    const handleAddProduct = e =>{
-        e.preventDefault()
-        const form = e.target
-        const  serviceUrl = form.image.value
-        const serviceName = form.serviceName.value
-        const name = form.name.value
-        const email = form.email.value
-        const photo = form.photo.value
-        const price = form.price.value
-        const area = form.area.value
-        const description = form.description.value
-
-        const adding = {serviceUrl,serviceName,name,email,photo,price,area,description}
-        console.log(adding)
-
-
-    }
-
-    return (
-        <div>
-      <h1 className="text-3xl font-bold text-center my-8 text-orange-400">Add Service</h1>
+  return (
+    <div>
+      <h1 className="text-3xl font-bold text-center my-8 text-orange-400">
+        Add Service
+      </h1>
 
       <h1 className="text-2xl text-orange-500 text-center">
         Please Carefully Add
@@ -41,7 +58,7 @@ const AddServices = () => {
         </span>
       </h1>
 
-      <form className="md:w-[70%] mx-auto p-4" onSubmit={handleAddProduct} >
+      <form className="md:w-[70%] mx-auto p-4" onSubmit={handleAddProduct}>
         <div className="flex flex-col md:flex-row gap-6">
           <div className="form-control w-full">
             <label className="label">
@@ -80,7 +97,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user?.displayName}
+                defaultValue={user?.displayName}
                 type="text"
                 placeholder="Your Name"
                 required
@@ -95,7 +112,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user?.email}
+                defaultValue={user?.email}
                 type="email"
                 placeholder="Your Email"
                 name="email"
@@ -106,8 +123,6 @@ const AddServices = () => {
           </div>
         </div>
 
-        
-
         <div className="flex flex-col md:flex-row  gap-6">
           <div className="form-control w-full">
             <label className="label">
@@ -115,7 +130,7 @@ const AddServices = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={user?.photoURL}
+                defaultValue={user?.photoURL}
                 type="text"
                 placeholder="Image URL"
                 name="photo"
@@ -171,17 +186,16 @@ const AddServices = () => {
           </div>
         </div>
 
-        
         <input
           className="btn bg-orange-400 text-white  w-full my-4 hover:bg-orange-500"
           type="submit"
           value="Add Service"
         />
       </form>
-      
-    
+
+      <Toaster />
     </div>
-    );
+  );
 };
 
 export default AddServices;

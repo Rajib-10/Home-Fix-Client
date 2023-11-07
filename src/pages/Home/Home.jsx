@@ -5,6 +5,7 @@ import SliderSlick from "./Slider/SliderSlick";
 import Marquee from "react-fast-marquee";
 import Summaries from "./Summaries/Summaries";
 import HowWork from "./HowWork/HowWork";
+import PopularServices from "./PopularServices/PopularServices";
 
 const Home = () => {
   const { user } = useAuth();
@@ -24,11 +25,14 @@ const Home = () => {
           </Marquee>
         </div>
       )}
+      <div className="max-w-[1230px] mx-auto">
       <SliderSlick />
-      <Summaries />
+      </div>
+      <PopularServices />
       <RecentServices />
       <AskedQuestion />
      <HowWork />
+     <Summaries />
     </div>
   );
 };

@@ -7,6 +7,9 @@ import Login from "../pages/Login/Login"
 import Register from "../pages/Register/Register"
 import AddServices from "../pages/AddServices/AddServices";
 import UpdateService from "../pages/UpdateService/UpdateService";
+import MyServices from "../pages/MyServices/MyServices";
+import MySchedules from "../pages/MySchedules/MySchedules";
+import SingleService from "../pages/SingleService/SingleService";
 
 
 const route = createBrowserRouter([
@@ -38,6 +41,18 @@ const route = createBrowserRouter([
         {
             path: "/update-service",
             element: <UpdateService />
+        },
+        {
+            path:"/my-services",
+            element: <MyServices />
+        },
+        {
+            path: "/my-schedules",
+            element: <MySchedules />
+        },
+        {
+            path: "/single-service/:id",
+            element: <SingleService />
         }
     ],
   },
