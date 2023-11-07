@@ -10,6 +10,7 @@ import UpdateService from "../pages/UpdateService/UpdateService";
 import MyServices from "../pages/MyServices/MyServices";
 import MySchedules from "../pages/MySchedules/MySchedules";
 import SingleService from "../pages/SingleService/SingleService";
+import PrivateRouter from "./PrivateRouter";
 
 
 const route = createBrowserRouter([
@@ -36,23 +37,23 @@ const route = createBrowserRouter([
         },
         {
             path: "/add-services",
-            element: <AddServices />
+            element: <PrivateRouter><AddServices /></PrivateRouter>
         },
         {
-            path: "/update-service",
+            path: "/update-service/:id",
             element: <UpdateService />
         },
         {
             path:"/my-services",
-            element: <MyServices />
+            element: <PrivateRouter><MyServices /></PrivateRouter>
         },
         {
             path: "/my-schedules",
-            element: <MySchedules />
+            element: <PrivateRouter><MySchedules /></PrivateRouter>
         },
         {
             path: "/single-service/:id",
-            element: <SingleService />
+            element: <PrivateRouter><SingleService /></PrivateRouter>
         }
     ],
   },

@@ -16,25 +16,25 @@ const SliderSlick = () => {
   };
 
   return (
-    <div className="h-[70vh]">
+    <div className="lg:h-[70vh] my-6">
       <Slider {...settings}>
         <div>
-          <img className="h-[343px] object-cover" src="https://i.ibb.co/FhGfR7s/banner1.jpg" alt="" />
+          <img className="md:h-[200px] lg:h-[343px] object-cover" src="https://i.ibb.co/FhGfR7s/banner1.jpg" alt="" />
         </div>
         <div>
-          <img className="h-[343px]  object-cover"  src="https://i.ibb.co/fqh954V/banner2.jpg" alt="" />
+          <img className="md:h-[200px] lg:h-[343px]  object-cover"  src="https://i.ibb.co/fqh954V/banner2.jpg" alt="" />
         </div>
         <div>
-          <img className="h-[343px] object-cover"  src="https://i.ibb.co/Fqwj2cR/banner3.jpg" alt="" />
+          <img className="md:h-[200px] lg:h-[343px] object-cover"  src="https://i.ibb.co/Fqwj2cR/banner3.jpg" alt="" />
         </div>
         <div>
-          <img className="h-[343px] object-cover"  src="https://i.ibb.co/5Fk2rsd/roofting.jpg" alt="" />
+          <img className="md:h-[200px] lg:h-[343px] object-cover"  src="https://i.ibb.co/5Fk2rsd/roofting.jpg" alt="" />
         </div>
         <div>
-          <img  className="h-full object-cover" src="https://i.ibb.co/CwsBZ3y/kitchen-setup.jpg" alt="" />
+          <img  className="md:h-[200px] lg:h-[343px]  object-cover" src="https://i.ibb.co/CwsBZ3y/kitchen-setup.jpg" alt="" />
         </div>
         <div>
-          <img  className="h-full object-cover" src="https://i.ibb.co/Fzq0JJY/window-fix.jpg" alt="" />
+          <img  className="md:h-[200px] lg:h-[343px]  object-cover" src="https://i.ibb.co/Fzq0JJY/window-fix.jpg" alt="" />
         </div>
       </Slider>
     </div>

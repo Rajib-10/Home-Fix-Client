@@ -1,18 +1,27 @@
 /* eslint-disable react/prop-types */
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 
+const ServiceCard = ({ service }) => {
+  const {
+    _id,
+    serviceUrl,
+    serviceName,
+    name,
+    photo,
+    price,
+    area,
+    description,
+  } = service || {};
+  const { user } = useAuth();
 
-const ServiceCard = ({service}) => {
-    const {_id,serviceUrl,serviceName,name,photo,price,area,description} = service || {}
-    const {user} = useAuth()
-
-
-
-    return (
-        <div>
-             <motion.div  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}   className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-base-100">
+  return (
+    <div>
+      <motion.div
+        whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+        className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-base-100"
+      >
         <div className="flex space-x-4 items-center">
           <img
             alt=""
@@ -20,12 +29,7 @@ const ServiceCard = ({service}) => {
             className="object-cover w-12 h-12 rounded-full shadow bg-gray-500"
           />
           <div className="flex flex-col space-y-1">
-            <h1
-              
-              className="text-sm font-semibold"
-            >
-              {name}
-            </h1>
+            <h1 className="text-sm font-semibold">{name}</h1>
           </div>
         </div>
         <div>
@@ -39,16 +43,18 @@ const ServiceCard = ({service}) => {
             <p>${price}</p>
           </div>
           <p className="text-sm text-gray-400">{description}</p>
-          <div className='flex justify-between items-center'>
-          <Link to={ user ? `/single-service/${_id}`: "/login"}>
-          <button className="btn bg-orange-400 hover:bg-orange-500 text-white my-2">View Details</button>
-          </Link>
-          <p>{area}</p>
+          <div className="flex justify-between items-center">
+            <Link to={user ? `/single-service/${_id}` : "/login"}>
+              <button className="btn bg-orange-400 hover:bg-orange-500 text-white my-2">
+                View Details
+              </button>
+            </Link>
+            <p>{area}</p>
           </div>
         </div>
       </motion.div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default ServiceCard;

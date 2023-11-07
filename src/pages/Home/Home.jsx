@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 import Summaries from "./Summaries/Summaries";
 import HowWork from "./HowWork/HowWork";
 import PopularServices from "./PopularServices/PopularServices";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { user } = useAuth();
@@ -13,7 +14,7 @@ const Home = () => {
   return (
     <div>
       {user && (
-        <div className="mx-auto w-[55%]">
+        <div className="mx-auto md:w-[55%]">
           <Marquee className="w-full">
             <h1 className="text-center my-4 ">
               Warm Welcome to Home-Fix,{" "}
@@ -25,7 +26,7 @@ const Home = () => {
           </Marquee>
         </div>
       )}
-      <div className="max-w-[1230px] mx-auto">
+      <div className=" lg:max-w-[1230px] mx-auto">
       <SliderSlick />
       </div>
       <PopularServices />
@@ -33,6 +34,9 @@ const Home = () => {
       <AskedQuestion />
      <HowWork />
      <Summaries />
+     <Helmet>
+      <title>Home-Fix | Home</title>
+     </Helmet>
     </div>
   );
 };

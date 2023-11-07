@@ -20,13 +20,16 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
+    "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.18.0",
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -3,6 +3,7 @@ import regImg from "../../../src/assets/register.json"
 import Lottie from "lottie-react";
 import useAuth from "../../Hook/useAuth";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 
@@ -147,6 +148,9 @@ const Register = () => {
           </div>
         </section>
         <Toaster />
+        <Helmet>
+      <title>Home-Fix | Register</title>
+     </Helmet>
       </div>
     );
 };

@@ -1,6 +1,7 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import toast, { Toaster } from "react-hot-toast";
 import useAuth from "../../Hook/useAuth";
+import { Helmet } from "react-helmet";
 
 const AddServices = () => {
   const { user } = useAuth();
@@ -98,6 +99,7 @@ const AddServices = () => {
             <label className="input-group">
               <input
                 defaultValue={user?.displayName}
+                readOnly
                 type="text"
                 placeholder="Your Name"
                 required
@@ -113,6 +115,7 @@ const AddServices = () => {
             <label className="input-group">
               <input
                 defaultValue={user?.email}
+                readOnly
                 type="email"
                 placeholder="Your Email"
                 name="email"
@@ -131,6 +134,7 @@ const AddServices = () => {
             <label className="input-group">
               <input
                 defaultValue={user?.photoURL}
+                readOnly
                 type="text"
                 placeholder="Image URL"
                 name="photo"
@@ -194,6 +198,9 @@ const AddServices = () => {
       </form>
 
       <Toaster />
+      <Helmet>
+      <title>Home-Fix | Add Service</title>
+     </Helmet>
     </div>
   );
 };

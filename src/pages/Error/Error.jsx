@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import img from "../../../src/assets/404.json";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Error = () => {
   return (
@@ -16,6 +17,9 @@ const Error = () => {
           </button>
         </Link>
       </div>
+      <Helmet>
+      <title>Home-Fix | 404</title>
+     </Helmet>
     </div>
   );
 };

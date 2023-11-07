@@ -1,10 +1,28 @@
+
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 
 const UpdateService = () => {
 
+  const [service,setService] = useState({})
+  const {serviceUrl,serviceName,name,email,photo,price,area,description} = service || {}
+  const {id} = useParams()
 
-    
+  useEffect(()=>{
+    axios.get('http://localhost:5000/add-services')
+    .then(res=>{
+      const filterService = res.data.find(item=>item._id==id)
+      setService(filterService)
+    })
+  },[id])
+
+  console.log("id",id)
+  console.log("update",service)
 
     const [text] = useTypewriter({
         words: [" Service URL", " Service Name", " price", " Service Area", " Description"],
@@ -26,7 +44,15 @@ const UpdateService = () => {
         const description = form.description.value
 
         const updating = {serviceUrl,serviceName,name,email,photo,price,area,description}
-        console.log(updating)
+        
+        axios.put(`http://localhost:5000/add-services/${id}`,updating)
+        .then(res=>{
+          if(res.data.modifiedCount > 0){
+            toast.success("Service updated successfully.")
+            form.reset()
+          }
+          console.log(res.data)
+        })
 
     }
 
@@ -49,6 +75,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={serviceUrl}
                   type="text"
                   placeholder="Service URL"
                   name="image"
@@ -63,6 +90,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={serviceName}
                   type="text"
                   placeholder="Service Name"
                   name="serviceName"
@@ -80,7 +108,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
-               
+                  defaultValue={name}
                   type="text"
                   placeholder="Your Name"
                   required
@@ -95,7 +123,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
-               
+                  defaultValue={email}
                   type="email"
                   placeholder="Your Email"
                   name="email"
@@ -115,7 +143,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
-              
+                defaultValue={photo}
                   type="text"
                   placeholder="Image URL"
                   name="photo"
@@ -130,6 +158,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={price}
                   type="text"
                   placeholder="Price"
                   name="price"
@@ -147,6 +176,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={area}
                   type="text"
                   placeholder="Area"
                   name="area"
@@ -161,6 +191,7 @@ const UpdateService = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={description}
                   type="text"
                   placeholder="Description (max 100)"
                   name="description"
@@ -179,7 +210,10 @@ const UpdateService = () => {
           />
         </form>
         
-      
+      <Toaster />
+      <Helmet>
+      <title>Home-Fix | Update Service</title>
+     </Helmet>
       </div>
     );
 };

@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const Summaries = () => {
     return (
         <div className='py-8 bg-base-200'>
-            <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} className='flex justify-between items-center md:w-[90%] mx-auto bg-base-300 rounded-lg  p-8'>
+            <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} className='flex flex-col lg:flex-row  justify-between items-center lg:w-[90%] mx-auto bg-base-300 rounded-lg  p-8 gap-8'>
             <div className='flex items-center gap-7'>
                 <div>
                     <BsPeopleFill className='text-6xl' />
