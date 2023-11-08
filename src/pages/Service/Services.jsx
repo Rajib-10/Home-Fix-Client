@@ -11,7 +11,7 @@ const Services = () => {
   const [isShow, setIsShow] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    axios.get("http://localhost:5000/add-services").then((res) => {
+    axios.get("https://home-fix-server.vercel.app/add-services").then((res) => {
       setServices(res.data);
       setSearchServices(res.data);
       setLoading(false);
@@ -68,7 +68,6 @@ const Services = () => {
 
       {loading ? (
         <div className="flex justify-center items-center h-[70vh]">
-        
           <BallTriangle
             height={100}
             width={100}
@@ -118,8 +117,8 @@ const Services = () => {
         </div>
       )}
       <Helmet>
-      <title>Home-Fix | Services</title>
-     </Helmet>
+        <title>Home-Fix | Services</title>
+      </Helmet>
     </div>
   );
 };

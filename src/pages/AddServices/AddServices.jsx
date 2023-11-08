@@ -7,31 +7,44 @@ const AddServices = () => {
   const { user } = useAuth();
 
   const [text] = useTypewriter({
-      words: [" Service URL", " Service Name", " price", " Service Area", " Description"],
-      loop: {},
-      typeSpeed: 100,
-      deleteSpeed: 40,
-    });
+    words: [
+      " Service URL",
+      " Service Name",
+      " price",
+      " Service Area",
+      " Description",
+    ],
+    loop: {},
+    typeSpeed: 100,
+    deleteSpeed: 40,
+  });
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-    const form = e.target
-    const  serviceUrl = form.image.value
-    const serviceName = form.serviceName.value
-    const name = form.name.value
-    const email = form.email.value
-    const photo = form.photo.value
-    const price = form.price.value
-    const area = form.area.value
-    const description = form.description.value
+    const form = e.target;
+    const serviceUrl = form.image.value;
+    const serviceName = form.serviceName.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const price = form.price.value;
+    const area = form.area.value;
+    const description = form.description.value;
 
-    const adding = {serviceUrl,serviceName,name,email,photo,price,area,description}
-    console.log("adding",adding)
-   
+    const adding = {
+      serviceUrl,
+      serviceName,
+      name,
+      email,
+      photo,
+      price,
+      area,
+      description,
+    };
+    console.log("adding", adding);
 
-         fetch("http://localhost:5000/add-services", {
-
-      credentials: "include",   
+    fetch("https://home-fix-server.vercel.app/add-services", {
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +54,8 @@ const AddServices = () => {
       .then((result) => result.json())
       .then((data) => {
         if (data.insertedId) {
-          toast.success("Service added successfully."); toast
+          toast.success("Service added successfully.");
+          toast;
           form.reset();
         }
         console.log(data);
@@ -201,8 +215,8 @@ const AddServices = () => {
 
       <Toaster />
       <Helmet>
-      <title>Home-Fix | Add Service</title>
-     </Helmet>
+        <title>Home-Fix | Add Service</title>
+      </Helmet>
     </div>
   );
 };

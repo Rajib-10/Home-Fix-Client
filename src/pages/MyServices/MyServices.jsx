@@ -9,7 +9,10 @@ const MyServices = () => {
   const [myServices, setMyServices] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/add-services?email=${user?.email}`,{withCredentials: true})
+      .get(
+        `https://home-fix-server.vercel.app/add-services?email=${user?.email}`,
+        { withCredentials: true }
+      )
       .then((res) => setMyServices(res.data));
   }, [user]);
 
