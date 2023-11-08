@@ -9,7 +9,7 @@ const MyServices = () => {
   const [myServices, setMyServices] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/add-services?email=${user?.email}`)
+      .get(`http://localhost:5000/add-services?email=${user?.email}`,{withCredentials: true})
       .then((res) => setMyServices(res.data));
   }, [user]);
 

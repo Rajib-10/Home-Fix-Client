@@ -30,6 +30,8 @@ const AddServices = () => {
    
 
          fetch("http://localhost:5000/add-services", {
+
+      credentials: "include",   
       method: "POST",
       headers: {
         "Content-Type": "application/json",

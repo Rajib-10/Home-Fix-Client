@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 
 const UpdateService = () => {
 
+  const navigate = useNavigate()
   const [service,setService] = useState({})
   const {serviceUrl,serviceName,name,email,photo,price,area,description} = service || {}
   const {id} = useParams()
@@ -50,6 +51,7 @@ const UpdateService = () => {
           if(res.data.modifiedCount > 0){
             toast.success("Service updated successfully.")
             form.reset()
+            navigate('/my-services')
           }
           console.log(res.data)
         })

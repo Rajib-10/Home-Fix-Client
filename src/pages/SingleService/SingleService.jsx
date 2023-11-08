@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import RestServiceCard from "./RestServiceCard";
 
 const SingleService = () => {
+  const today = new Date().toISOString().split('T')[0];
     const {user}=useAuth()
   const { id } = useParams();
   const [service, setService] = useState({});
@@ -14,12 +16,12 @@ const SingleService = () => {
     service || {};
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/add-services/${id}`)
+      .get(`http://localhost:5000/add-services/${id}`,{withCredentials:true})
       .then((res) => setService(res.data));
   }, [id]);
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/add-services`)
+    axios.get(`http://localhost:5000/add-services`,{withCredentials:true})
     .then(res=>{
       const filterRestServices = res.data.filter(item=>item.email==email && item._id!==id)
       setRestServices(filterRestServices)
@@ -92,7 +94,7 @@ const SingleService = () => {
         <div>
             <button onClick={()=>document.getElementById('my_modal_3').showModal()} className={`btn bg-orange-400 hover:bg-orange-500 text-white`} disabled={user?.email === email} >Book Now</button>
             {
-              user?.email === email && <span className="text-red-700 mx-1">you are service provider you can not book service</span>
+              user?.email === email && <span className="text-red-700 mx-1">you are service provider, you can not book service</span>
             }
 
 {/* You can open the modal using document.getElementById('ID').showModal() method */}
@@ -185,6 +187,7 @@ const SingleService = () => {
                 type="date"
                 name="date"
                 required
+                min={today}
                 className="input input-bordered w-full  bg-gray-200  focus:border-orange-300 focus:bg-white focus:outline-none"
               />
             </label>
@@ -236,8 +239,19 @@ const SingleService = () => {
       
     </div>
 
+
 <div>
-  <h1>more service by same provider:{restServices.length}</h1>
+  {
+    restServices.length >0 && <div>
+      <h1 className="text-3xl text-orange-400 p-8">More service by same provider</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-6 w-[90%] mx-auto">
+        {
+          restServices?.map(restService=> <RestServiceCard key={restService} restService={restService} />)
+        }
+      </div>
+    </div>
+  }
+  
 </div>
 
     <Toaster /> 
