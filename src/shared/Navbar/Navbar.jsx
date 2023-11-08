@@ -76,18 +76,14 @@ const Navbar = () => {
               </li>
 
               <li className={user ? "display" : "hidden"}>
-              <button onClick={()=>userLogOut()}>Logout</button>
+              <button  onClick={()=>userLogOut()}>Logout</button>
             </li>
 
               <li>
-                <NavLink
-                  to="/messages"
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "z-10"
-                  }
-                >
+                
+                  
                   Dashboard
-                </NavLink>
+                
 
                 <ul className="p-2">
                   <li>
