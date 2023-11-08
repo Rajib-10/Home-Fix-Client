@@ -60,7 +60,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-              <li>
+              <li className={`${user?.email ? "hidden" : ""}`}>
                 <NavLink
                   to="/login"
                   className={({ isActive, isPending }) =>
@@ -79,7 +79,7 @@ const Navbar = () => {
               <button  onClick={()=>userLogOut()}>Logout</button>
             </li>
 
-              <li>
+              <li className={`${user ? "display" : "hidden"}`}>
                 
                   
                   Dashboard
