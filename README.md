@@ -1,10 +1,3 @@
-# Home-Fix
-
-Home-Fox is a  mern stack project where we are exploring react router,react private router ,firebase authentication , mongodb crud operation and JWT.
-
-# Live Link: [Home-Fix](https://home-fix-f067a.web.app)
-
-
 
 # Home-Fix
 
