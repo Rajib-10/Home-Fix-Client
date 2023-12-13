@@ -7,6 +7,7 @@ import Summaries from "./Summaries/Summaries";
 import HowWork from "./HowWork/HowWork";
 import PopularServices from "./PopularServices/PopularServices";
 import { Helmet } from "react-helmet";
+import Emergency from "./Emergency/Emergency";
 
 const Home = () => {
   const { user } = useAuth();
@@ -34,6 +35,7 @@ const Home = () => {
       <AskedQuestion />
      <HowWork />
      <Summaries />
+     <Emergency />
      <Helmet>
       <title>Home-Fix | Home</title>
      </Helmet>
