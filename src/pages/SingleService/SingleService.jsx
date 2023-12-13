@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import RestServiceCard from "./RestServiceCard";
 
+
 const SingleService = () => {
   const today = new Date().toISOString().split("T")[0];
   const { user } = useAuth();
@@ -271,6 +272,8 @@ const SingleService = () => {
           </div>
         )}
       </div>
+
+
 
       <Toaster />
       <Helmet>

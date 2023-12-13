@@ -8,6 +8,8 @@ import HowWork from "./HowWork/HowWork";
 import PopularServices from "./PopularServices/PopularServices";
 import { Helmet } from "react-helmet";
 import Emergency from "./Emergency/Emergency";
+import SliderTestimonial from "./SliderTestimonial/SliderTestimonial";
+
 
 const Home = () => {
   const { user } = useAuth();
@@ -36,6 +38,7 @@ const Home = () => {
      <HowWork />
      <Summaries />
      <Emergency />
+    <SliderTestimonial />
      <Helmet>
       <title>Home-Fix | Home</title>
      </Helmet>

@@ -1,0 +1,32 @@
+[
+    {
+        "photo": "https://i.ibb.co/dMDp2mM/9.jpg",
+        "name": "Robert Davis",
+        "comment": "Had a fantastic experience with HomeFix. The team was friendly, and the booking process was seamless. Will be using their services for all my home needs.",
+        "rating": 5
+    },
+    {
+        "photo": "https://i.ibb.co/cvLHF9r/10.jpg",
+        "name": "Bob Smith",
+        "comment": "The service bundles are a game-changer! I chose the Home Cleaning Package, and my house has never looked better. Great value for money.",
+        "rating": 4
+    },
+    {
+        "photo": "https://i.ibb.co/kSJvVv0/11.jpg",
+        "name": "Daniel Brown",
+        "comment": "I availed the HomeFix emergency service, and they exceeded my expectations. Fast, efficient, and the team ensured my home was safe. Grateful for their help!",
+        "rating": 5
+    },
+    {
+        "photo": "https://i.ibb.co/s2XFbp6/13.jpg",
+        "name": "Sophia Taylor",
+        "comment": "I needed urgent plumbing assistance, and HomeFix came to the rescue. Quick response, skilled technicians, and fair pricing. Highly recommended!",
+        "rating": 4
+    },
+    {
+        "photo": "https://i.ibb.co/0sDKrW1/12.jpg",
+        "name": "Thomas Johnson",
+        "comment": "Exceptional service! The team was prompt, professional, and left my home spotless after the cleaning. Will definitely use HomeFix again!",
+        "rating": 5
+    }
+]
